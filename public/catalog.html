@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог автомобилей - FASTS-CAR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/car--v1.png">
+</head>
+<body>
+    <!-- Шапка сайта (такая же как на главной) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+               <div class="logo">
+    <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="FASTS-CAR — прямые поставки авто из Японии, Кореи, Китая" class="logo-img">
+        <div class="logo-text">
+            <span class="logo-title">FASTS-CAR</span>
+            <span class="logo-subtitle">Авто из Азии напрямую</span>
+        </div>
+    </a>
+</div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html" class="active">Каталог</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-contacts">
+                    <a href="tel:+79084501200" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (908) 450-12-00</span>
+                    </a>
+                    <button class="btn btn-small callback-btn">Заказать звонок</button>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Заголовок каталога -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Каталог автомобилей</h1>
+            <p class="page-subtitle">Прямые поставки из Японии, Кореи и Китая. Более 150 авто в наличии</p>
+            
+            <div class="catalog-stats">
+                <div class="stat">
+                    <span class="stat-number" id="total-cars">0</span>
+                    <span class="stat-label">авто в каталоге</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="japan-cars">0</span>
+                    <span class="stat-label">из Японии</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="korea-cars">0</span>
+                    <span class="stat-label">из Кореи</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="china-cars">0</span>
+                    <span class="stat-label">из Китая</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильтры -->
+    <section class="catalog-filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filters-header">
+                    <h2>Фильтры</h2>
+                    <button class="btn btn-small" id="reset-filters">Сбросить все</button>
+                </div>
+                
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="country-filter">Страна</label>
+                        <select id="country-filter" class="filter-select">
+                            <option value="all">Все страны</option>
+                            <option value="japan">Япония</option>
+                            <option value="korea">Корея</option>
+                            <option value="china">Китай</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="body-type">Тип кузова</label>
+                        <select id="body-type" class="filter-select">
+                            <option value="all">Все типы</option>
+                            <option value="sedan">Седан</option>
+                            <option value="suv">Внедорожник</option>
+                            <option value="hatchback">Хэтчбек</option>
+                            <option value="minivan">Минивэн</option>
+                            <option value="coupe">Купе</option>
+                            <option value="pickup">Пикап</option>
+                            <option value="wagon">Универсал</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="transmission">Коробка передач</label>
+                        <select id="transmission" class="filter-select">
+                            <option value="all">Все КПП</option>
+                            <option value="automatic">Автомат</option>
+                            <option value="manual">Механика</option>
+                            <option value="robot">Робот</option>
+                            <option value="cvt">Вариатор</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="drive">Привод</label>
+                        <select id="drive" class="filter-select">
+                            <option value="all">Любой привод</option>
+                            <option value="front">Передний</option>
+                            <option value="rear">Задний</option>
+                            <option value="all-wheel">Полный</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group range-group">
+                        <label for="year-range">Год выпуска</label>
+                        <div class="range-values">
+                            <span id="year-min">2015</span>
+                            <span>—</span>
+                            <span id="year-max">2024</span>
+                        </div>
+                        <div class="range-slider">
+                            <input type="range" id="year-min-input" min="2010" max="2024" value="2015">
+                            <input type="range" id="year-max-input" min="2010" max="2024" value="2024">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group range-group">
+                        <label for="price-range">Цена, руб.</label>
+                        <div class="range-values">
+                            <span id="price-min">500 000</span>
+                            <span>—</span>
+                            <span id="price-max">5 000 000</span>
+                        </div>
+                        <div class="range-slider">
+                            <input type="range" id="price-min-input" min="0" max="10000000" step="50000" value="500000">
+                            <input type="range" id="price-max-input" min="0" max="10000000" step="50000" value="5000000">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="engine-volume">Объем двигателя, л</label>
+                        <select id="engine-volume" class="filter-select">
+                            <option value="all">Любой объем</option>
+                            <option value="1.0-1.6">1.0 - 1.6</option>
+                            <option value="1.6-2.0">1.6 - 2.0</option>
+                            <option value="2.0-3.0">2.0 - 3.0</option>
+                            <option value="3.0+">3.0 и более</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn btn-primary" id="apply-filters">Применить фильтры</button>
+                    <div class="filter-results">
+                        Найдено: <span id="found-cars">0</span> автомобилей
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сетка автомобилей -->
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="catalog-controls">
+                <div class="sort-controls">
+                    <label for="sort-by">Сортировка:</label>
+                    <select id="sort-by">
+                        <option value="newest">Сначала новые</option>
+                        <option value="price-asc">Цена по возрастанию</option>
+                        <option value="price-desc">Цена по убыванию</option>
+                        <option value="year-desc">Сначала новые по году</option>
+                        <option value="year-asc">Сначала старые по году</option>
+                    </select>
+                </div>
+                
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="cars-grid" id="catalog-cars">
+                <!-- Автомобили будут загружены через JavaScript -->
+                <div class="loading">Загрузка каталога...</div>
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Пагинация будет сгенерирована через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с призывом к действию -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Не нашли подходящий автомобиль?</h2>
+                <p>Оставьте заявку на подбор - мы найдем для вас лучший вариант на аукционах Японии, Кореи или Китая</p>
+                <button class="btn btn-primary" id="cta-callback">Оставить заявку на подбор</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта (такой же как на главной) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+    <img src="images/logo.png" alt="FASTS-CAR" class="footer-logo-img">
+    <div class="footer-logo-text">
+        <span class="logo-title">FASTS-CAR</span>
+        <span class="logo-subtitle">Авто из Азии напрямую</span>
+    </div>
+</div>
+                    <p class="footer-description">Прямые поставки автомобилей из Японии, Кореи и Китая без посредников. Работаем с 2018 года.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/fasts_car" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/fasts_car" target="_blank" title="Telegram канал">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://vk.com/fasts_cars" target="_blank" title="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/SerLozhnik" target="_blank" title="Личный Telegram Сергея">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог авто</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Подбор авто под ключ</a></li>
+                        <li><a href="services.html">Покупка на аукционах</a></li>
+                        <li><a href="services.html">Доставка по России</a></li>
+                        <li><a href="services.html">Растаможка авто</a></li>
+                        <li><a href="services.html">Автокредит</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Контакты</h3>
+                    <div class="footer-contacts">
+                        <div class="footer-contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>г. Владивосток, Приморский край, Россия</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79084501200">+7 (908) 450-12-00</a>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:fasts.car@mail.ru">fasts.car@mail.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FASTS-CAR. Все права защищены.</p>
+                <p>Прямые поставки автомобилей из Азии</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно заказа звонка -->
+    <div class="modal" id="callback-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Заказать обратный звонок</h2>
+            <p>Оставьте свои контакты и Сергей свяжется с вами в ближайшее время</p>
+            
+            <form id="callback-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Ваш телефон" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Ваш вопрос (необязательно)" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно автомобиля -->
+    <div class="modal modal-car" id="car-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="car-modal-content">
+                <!-- Содержимое будет заполнено через JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="catalog-data.js"></script>
+    <script>
+        // Инициализация каталога
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initCatalog === 'function') {
+                initCatalog();
+            }
+            
+            // Открытие модального окна при клике на кнопку "Оставить заявку на подбор"
+            document.getElementById('cta-callback').addEventListener('click', function() {
+                openModal('callback-modal');
+            });
+        });
+    </script>
+</body>
+</html>

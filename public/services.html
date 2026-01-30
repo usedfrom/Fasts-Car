@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - FASTS-CAR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/car--v1.png">
+</head>
+<body>
+    <!-- Шапка сайта (такая же как на главной) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+               <div class="logo">
+    <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="FASTS-CAR — прямые поставки авто из Японии, Кореи, Китая" class="logo-img">
+        <div class="logo-text">
+            <span class="logo-title">FASTS-CAR</span>
+            <span class="logo-subtitle">Авто из Азии напрямую</span>
+        </div>
+    </a>
+</div>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="services.html" class="active">Услуги</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-contacts">
+                    <a href="tel:+79084501200" class="phone-link">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (908) 450-12-00</span>
+                    </a>
+                    <button class="btn btn-small callback-btn">Заказать звонок</button>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Заголовок страницы услуг -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Наши услуги</h1>
+            <p class="page-subtitle">Полный комплекс услуг по подбору, покупке и доставке автомобилей из Азии</p>
+        </div>
+    </section>
+
+    <!-- Основные услуги -->
+    <section class="section services-main">
+        <div class="container">
+            <div class="services-grid" id="services-grid">
+                <!-- Услуги будут загружены через JavaScript -->
+                <div class="loading">Загрузка услуг...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс работы (детальный) -->
+    <section class="section process-detailed">
+        <div class="container">
+            <h2 class="section-title">Процесс работы детально</h2>
+            <p class="section-subtitle">Как мы обеспечиваем надежную покупку автомобиля из-за рубежа</p>
+            
+            <div class="detailed-process">
+                <div class="process-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">01</div>
+                        <h3>Консультация и подбор</h3>
+                    </div>
+                    <div class="phase-content">
+                        <p>Мы детально обсуждаем ваши требования к автомобилю: бюджет, марка, модель, год выпуска, комплектация. На основе этого формируем техническое задание для поиска.</p>
+                        <ul class="phase-list">
+                            <li>Анализ рынка и рекомендации по выбору</li>
+                            <li>Составление списка подходящих вариантов</li>
+                            <li>Обсуждение преимуществ и недостатков каждого варианта</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">02</div>
+                        <h3>Поиск и проверка на аукционах</h3>
+                    </div>
+                    <div class="phase-content">
+                        <p>Наши специалисты отслеживают аукционы Японии, Кореи и Китая, выбирая лучшие предложения по соотношению цена/качество.</p>
+                        <ul class="phase-list">
+                            <li>Анализ истории автомобиля (аварии, ремонты)</li>
+                            <li>Проверка по базам аукционов (AUC, JAAI, etc.)</li>
+                            <li>Оценка реального состояния по фотографиям и описаниям</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">03</div>
+                        <h3>Покупка и оформление</h3>
+                    </div>
+                    <div class="phase-content">
+                        <p>После вашего согласия мы участвуем в торгах, оформляем покупку и все необходимые документы.</p>
+                        <ul class="phase-list">
+                            <li>Участие в аукционных торгах</li>
+                            <li>Оформление договора купли-продажи</li>
+                            <li>Получение экспортных документов</li>
+                            <li>Оплата покупки и всех сборов</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-phase">
+                    <div class="phase-header">
+                        <div class="phase-number">04</div>
+                        <h3>Доставка и растаможка</h3>
+                    </div>
+                    <div class="phase-content">
+                        <p>Мы организуем доставку автомобиля до Владивостока морем, а затем транспортировку до вашего города.</p>
+                        <ul class="phase-list">
+                            <li>Организация морской перевозки</li>
+                            <li>Таможенное оформление во Владивостоке</li>
+                            <li>Доставка автотранспортом по России</li>
+                            <li>Помощь в получении ПТС и СБКТС</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Стоимость услуг -->
+    <section class="section pricing-section">
+        <div class="container">
+            <h2 class="section-title">Стоимость услуг</h2>
+            <p class="section-subtitle">Прозрачное ценообразование без скрытых платежей</p>
+            
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Услуга</th>
+                            <th>Описание</th>
+                            <th>Стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pricing-table-body">
+                        <!-- Данные будут загружены через JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pricing-note">
+                <p><i class="fas fa-info-circle"></i> <strong>Важно:</strong> Указаны базовые тарифы. Точная стоимость рассчитывается индивидуально в зависимости от выбранного автомобиля и условий доставки.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Сколько времени занимает вся процедура от заказа до получения автомобиля?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>В среднем, весь процесс занимает от 45 до 90 дней в зависимости от страны покупки и города доставки. Из Японии до Владивостока - около 7-14 дней морем, затем растаможка (3-5 дней) и доставка по России (от 7 до 30 дней в зависимости от региона).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какие гарантии вы предоставляете?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Мы предоставляем полную юридическую гарантию чистоты сделки. Все автомобили проходят проверку на угон и юридическую чистоту. Мы гарантируем соответствие автомобиля описанию и полную легальность таможенного оформления.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Можно ли получить кредит на покупку автомобиля?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы сотрудничаем с несколькими банками и можем помочь вам оформить автокредит. Для этого потребуется стандартный пакет документов. Процентная ставка и условия кредитования зависят от банка и вашей кредитной истории.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Что входит в итоговую стоимость автомобиля?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Итоговая стоимость состоит из: 1) Стоимость автомобиля на аукционе; 2) Аукционный сбор; 3) Наши услуги; 4) Доставка морем; 5) Таможенные пошлины и сборы; 6) Доставка по России до вашего города; 7) Стоимость получения ПТС и регистрации.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Могу ли я приехать во Владивосток и забрать автомобиль самостоятельно?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, конечно. Многие клиенты приезжают забирать автомобили самостоятельно. Мы поможем с оформлением всех документов, предоставим временные номера при необходимости и организуем техосмотр.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с призывом к действию -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Готовы заказать автомобиль?</h2>
+                <p>Свяжитесь с нами для консультации и расчета стоимости</p>
+                <div class="cta-buttons">
+                    <a href="tel:+79084501200" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Позвонить сейчас
+                    </a>
+                    <button class="btn btn-secondary callback-btn">Заказать обратный звонок</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта (такой же как на главной) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+    <img src="images/logo.png" alt="FASTS-CAR" class="footer-logo-img">
+    <div class="footer-logo-text">
+        <span class="logo-title">FASTS-CAR</span>
+        <span class="logo-subtitle">Авто из Азии напрямую</span>
+    </div>
+</div>
+                    <p class="footer-description">Прямые поставки автомобилей из Японии, Кореи и Китая без посредников. Работаем с 2018 года.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/fasts_car" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/fasts_car" target="_blank" title="Telegram канал">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://vk.com/fasts_cars" target="_blank" title="ВКонтакте">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/SerLozhnik" target="_blank" title="Личный Telegram Сергея">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог авто</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Подбор авто под ключ</a></li>
+                        <li><a href="services.html">Покупка на аукционах</a></li>
+                        <li><a href="services.html">Доставка по России</a></li>
+                        <li><a href="services.html">Растаможка авто</a></li>
+                        <li><a href="services.html">Автокредит</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Контакты</h3>
+                    <div class="footer-contacts">
+                        <div class="footer-contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>г. Владивосток, Приморский край, Россия</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79084501200">+7 (908) 450-12-00</a>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:fasts.car@mail.ru">fasts.car@mail.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FASTS-CAR. Все права защищены.</p>
+                <p>Прямые поставки автомобилей из Азии</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно заказа звонка -->
+    <div class="modal" id="callback-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Заказать обратный звонок</h2>
+            <p>Оставьте свои контакты и Сергей свяжется с вами в ближайшее время</p>
+            
+            <form id="callback-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Ваш телефон" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Ваш вопрос (необязательно)" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="services-data.js"></script>
+    <script>
+        // Инициализация страницы услуг
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof loadServices === 'function') {
+                loadServices();
+            }
+            
+            if (typeof loadPricing === 'function') {
+                loadPricing();
+            }
+            
+            // Инициализация FAQ
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    answer.classList.toggle('active');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
