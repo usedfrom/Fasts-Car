@@ -2151,7 +2151,7 @@ textarea {
 
 /* Блок с фото — основной контейнер */
 .car-image {
-    height: 260px;                /* или твоя текущая высота */
+    height: 240px;                /* или твоя текущая высота */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2173,7 +2173,7 @@ textarea {
 
 /* Информация под фото */
 .car-info {
-    padding: 18px 16px 20px;
+    padding: 25px 16px 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;               /* растягивает информацию вниз */
@@ -2319,4 +2319,120 @@ body.scrolled-down {
 
 .nav-list li {
     list-style: none;
+}
+
+/* Фото человека на фоне — светлое, размер как есть */
+.process-section {
+    position: relative;
+    background: url('/hero-bg2.png') center center / contain no-repeat;
+    background-size: contain;
+    min-height: 500px; /* высота на десктопе — подгони под своё фото */
+    background-position: left; /* фиксируем слева */
+}
+
+/* Плашки — прозрачные, лежат поверх фото */
+.process-section .step {
+    background: rgba(255, 255, 255, 0.05);   /* почти невидимый белый */
+    backdrop-filter: blur(3px);             /* очень сильное размытие */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    color: #000000;
+}
+
+/* Заголовки чёрные */
+.process-section .section-title,
+.process-section .section-subtitle {
+    color: #000000;
+    text-shadow: 0 1px 4px rgba(255,255,255,0.9);
+}
+
+/* На десктопе — фото видно полностью, плашки в ряд */
+@media (min-width: 993px) {
+    .process-section {
+        background-position: left center;
+        min-height: 500px; /* или твоя текущая высота */
+    }
+    
+    .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+}
+
+/* На мобильных — фото сверху, плашки ниже (в ряд или столбик — как было) */
+@media (max-width: 992px) {
+    .process-section {
+        background: url('/hero-bg2.png') center top / contain no-repeat;
+        background-size: contain;
+        min-height: 400px; /* уменьшаем высоту контейнера */
+        padding-top: 550px; /* делаем место сверху для фото */
+        background-position: center top 20px; /* фото сверху с небольшим отступом */
+    }
+    
+    .process-person-wrapper {
+        display: none; /* скрываем дубликат, если он есть */
+    }
+    
+    .process-steps {
+        margin-top: 20px;
+    }
+    
+    /* Если хочешь, чтобы плашки оставались в ряд на мобильных — оставь как есть */
+    /* Или сделай в столбик: */
+    /* .process-steps { grid-template-columns: 1fr; } */
+}
+
+.send-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.btn-telegram {
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-telegram:hover {
+    background-color: #006699;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    transform: translateY(-2px);
+}
+
+.btn-telegram i,
+.btn-whatsapp i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+/* на мобильных — кнопки в столбик */
+@media (max-width: 480px) {
+    .send-options {
+        flex-direction: column;
+    }
 }
