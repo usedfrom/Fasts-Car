@@ -322,25 +322,33 @@
 
     <!-- Модальное окно заказа звонка -->
     <div class="modal" id="callback-modal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h2>Заказать обратный звонок</h2>
-            <p>Оставьте свои контакты и Сергей свяжется с вами в ближайшее время</p>
-            
-            <form id="callback-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Ваш телефон" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Ваш вопрос (необязательно)" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Заказать звонок</button>
-            </form>
-        </div>
+    <div class="modal-content">
+        <button class="modal-close">×</button>
+        <h2>Заказать обратный звонок</h2>
+        <p>Оставьте контакты — Сергей свяжется с вами в ближайшее время</p>
+
+        <form id="callback-form">
+            <div class="form-group">
+                <input type="text" id="callback-name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="callback-phone" placeholder="Ваш телефон" required>
+            </div>
+            <div class="form-group">
+                <textarea id="callback-comment" placeholder="Что вас интересует? (необязательно)" rows="3"></textarea>
+            </div>
+
+            <div class="send-options">
+                <button type="button" class="btn btn-telegram" data-channel="telegram">
+                    <i class="fab fa-telegram-plane"></i> Отправить в Telegram
+                </button>
+                <button type="button" class="btn btn-whatsapp" data-channel="whatsapp">
+                    <i class="fab fa-whatsapp"></i> Отправить в WhatsApp
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 
     <!-- Кнопка "Наверх" -->
     <button class="scroll-top">
