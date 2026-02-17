@@ -9,22 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body>
     <!-- Шапка сайта -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-               <div class="logo">
-    <a href="index.html" class="logo-link">
-        <img src="/logo.png" alt="FASTS-CAR — прямые поставки авто из Японии, Кореи, Китая" class="logo-img">
-        <div class="logo-text">
-            <span class="logo-title">FASTS-CAR</span>
-            <span class="logo-subtitle">Авто из Азии напрямую</span>
-        </div>
-    </a>
-</div>
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="/logo.png" alt="FASTS-CAR — прямые поставки авто из Японии, Кореи, Китая" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-title">FASTS-CAR</span>
+                            <span class="logo-subtitle">Авто из Азии напрямую</span>
+                        </div>
+                    </a>
+                </div>
                 
                 <nav class="nav">
                     <ul class="nav-list">
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <!-- Как мы работаем -->
+    <!-- Как мы работаем — фото человека на фоне, плашки лежат поверх фото -->
     <section class="section process-section">
         <div class="container">
             <h2 class="section-title">Как мы работаем</h2>
@@ -145,7 +145,7 @@
         </div>
     </section>
 
-    <!-- Форма подбора автомобиля (замена старого калькулятора) -->
+    <!-- Форма подбора автомобиля -->
     <section class="section calculator-section" id="calculator">
         <div class="container">
             <h2 class="section-title">Подберите автомобиль своей мечты</h2>
@@ -367,12 +367,12 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="footer-logo">
-    <img src="/logo.png" alt="FASTS-CAR" class="footer-logo-img">
-    <div class="footer-logo-text">
-        <span class="logo-title">FASTS-CAR</span>
-        <span class="logo-subtitle">Авто из Азии напрямую</span>
-    </div>
-</div>
+                        <img src="/logo.png" alt="FASTS-CAR" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="logo-title">FASTS-CAR</span>
+                            <span class="logo-subtitle">Авто из Азии напрямую</span>
+                        </div>
+                    </div>
                     <p class="footer-description">Прямые поставки автомобилей из Японии, Кореи и Китая без посредников. Работаем с 2018 года.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/fasts_car" target="_blank" title="Instagram">
@@ -440,30 +440,38 @@
 
     <!-- Модальное окно заказа звонка -->
     <div class="modal" id="callback-modal">
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h2>Заказать обратный звонок</h2>
-            <p>Оставьте свои контакты и Сергей свяжется с вами в ближайшее время</p>
-            
-            <form id="callback-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Ваш телефон" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Ваш вопрос (необязательно)" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Заказать звонок</button>
-            </form>
-        </div>
+    <div class="modal-content">
+        <button class="modal-close">×</button>
+        <h2>Заказать обратный звонок</h2>
+        <p>Оставьте контакты — Сергей свяжется с вами в ближайшее время</p>
+
+        <form id="callback-form">
+            <div class="form-group">
+                <input type="text" id="callback-name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="callback-phone" placeholder="Ваш телефон" required>
+            </div>
+            <div class="form-group">
+                <textarea id="callback-comment" placeholder="Что вас интересует? (необязательно)" rows="3"></textarea>
+            </div>
+
+            <div class="send-options">
+                <button type="button" class="btn btn-telegram" data-channel="telegram">
+                    <i class="fab fa-telegram-plane"></i> Отправить в Telegram
+                </button>
+                <button type="button" class="btn btn-whatsapp" data-channel="whatsapp">
+                    <i class="fab fa-whatsapp"></i> Отправить в WhatsApp
+                </button>
+            </div>
+        </form>
     </div>
+</div>
 
     <!-- Модальное окно автомобиля -->
     <div class="modal modal-car" id="car-modal">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
+            <button class="modal-close">×</button>
             <div id="car-modal-content">
                 <!-- Содержимое будет заполнено через JavaScript -->
             </div>
@@ -478,15 +486,11 @@
     <script src="script.js"></script>
     <script src="catalog-data.js"></script>
     <script>
-        // Инициализация на главной странице
         document.addEventListener('DOMContentLoaded', function() {
-            // Загрузка последних автомобилей
             if (typeof loadLatestCars === 'function') {
                 loadLatestCars();
             }
         });
     </script>
 </body>
-
 </html>
-
