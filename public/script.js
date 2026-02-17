@@ -452,3 +452,83 @@ if (header) {
         lastScrollTop = st <= 0 ? 0 : st;
     }, { passive: true });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('callback-modal');
+    const closeBtn = document.querySelector('.modal-close');
+    const callbackButtons = document.querySelectorAll('.callback-btn'); // все кнопки "Заказать звонок"
+
+    // Открытие модалки
+    callbackButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            modal.classList.add('active');
+        });
+    });
+
+    // Закрытие
+    closeBtn.addEventListener('click', function () {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // Обработка отправки
+    const form = document.getElementById('callback-form');
+    if (form) {
+        const nameInput    = document.getElementById('callback-name');
+        const phoneInput   = document.getElementById('callback-phone');
+        const commentInput = document.getElementById('callback-comment');
+
+        const telegramBtn  = form.querySelector('.btn-telegram');
+        const whatsappBtn  = form.querySelector('.btn-whatsapp');
+
+        // Ваши контакты (куда писать клиенту)
+        const yourTelegramUsername = 'SerLozhnik';          // без @
+        const yourWhatsAppNumber   = '79084501200';          // в международном формате без +
+
+        telegramBtn.addEventListener('click', function () {
+            if (!nameInput.checkValidity() || !phoneInput.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const name    = encodeURIComponent(nameInput.value.trim());
+            const phone   = encodeURIComponent(phoneInput.value.trim());
+            const comment = commentInput.value.trim() 
+                ? encodeURIComponent('\nКомментарий: ' + commentInput.value.trim()) 
+                : '';
+
+            const text = `Хочу заказать звонок!\nИмя: ${name}\nТелефон: ${phone}${comment}`;
+
+            const url = `https://t.me/${yourTelegramUsername}?text=${text}`;
+            window.open(url, '_blank');
+            
+            // можно закрыть модалку после отправки
+            modal.classList.remove('active');
+        });
+
+        whatsappBtn.addEventListener('click', function () {
+            if (!nameInput.checkValidity() || !phoneInput.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const name    = encodeURIComponent(nameInput.value.trim());
+            const phone   = encodeURIComponent(phoneInput.value.trim());
+            const comment = commentInput.value.trim() 
+                ? encodeURIComponent('\nКомментарий: ' + commentInput.value.trim()) 
+                : '';
+
+            const text = `Хочу заказать звонок!\nИмя: ${name}\nТелефон: ${phone}${comment}`;
+
+            const url = `https://wa.me/${yourWhatsAppNumber}?text=${text}`;
+            window.open(url, '_blank');
+
+            modal.classList.remove('active');
+        });
+    }
+});
